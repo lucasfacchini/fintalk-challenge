@@ -15,8 +15,8 @@ export class Transaction {
         throw new ValidationError("User ID is required");
       }
 
-      if (amount <= 0) {
-        throw new ValidationError("Amount must be greater than zero");
+      if (amount == 0) {
+        throw new ValidationError("Amount can't be zero");
       }
 
       if (!description || description.trim().length === 0) {

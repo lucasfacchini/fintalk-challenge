@@ -48,7 +48,7 @@ describe("Transaction Lambda Handler", () => {
 
     const response = await handler(event);
     expect(response.statusCode).toBe(400);
-    expect(JSON.parse(response.body)).toEqual({ error: "Amount must be greater than zero" });
+    expect(JSON.parse(response.body)).toEqual({ error: "Amount can't be zero" });
   });
 
   it("should return 200 when retrieving transactions", async () => {
