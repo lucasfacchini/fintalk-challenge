@@ -9,11 +9,6 @@ terraform {
       version = "~> 5.92.0"
     }
   }
-#  backend "s3" {
-#    bucket = "<your unique bucket name>"
-#    key    = "my_lambda/terraform.tfstate"
-#    region = "eu-central-1"
-#  }
 }
 
 resource "aws_dynamodb_table" "transactions" {
