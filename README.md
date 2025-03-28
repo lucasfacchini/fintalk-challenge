@@ -108,6 +108,14 @@ Obter saldo:
 node dist/cli.js get balance -q "userId=12345,month=2025-03"
 ```
 
+## Execução de testes
+Os testes unitários podem ser executados com os comandos abaixo:
+
+```
+npx npm install
+npx jest
+```
+
 ## Deploy
 O deploy da aplicação pode ser feito rodando o script `deploy.sh` presente na raiz do repositório.
 ```
