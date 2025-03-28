@@ -2,6 +2,8 @@
 
 A implementação neste repositório foi realizada usando Node, Typescript, Lambda e Terraform.
 
+[Arquitetura para streaming para o RDS.](docs/dynamodb-streaming-rds.md)
+
 ## Endpoints
 
 A seguir segue os endpoints de API disponibilizados pela aplicação.
