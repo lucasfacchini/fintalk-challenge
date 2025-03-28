@@ -1,11 +1,9 @@
 import { Command } from "commander";
 import { handler } from "./interfaces/transactionHandler"
-import { APIGatewayProxyEvent, APIGatewayProxyEventQueryStringParameters } from "aws-lambda";
 
 const program = new Command();
 
 program.version("1.0.0").description("CLI para testes locais");
-
 
 async function invokeHandler(httpMethod: string, path: string, queryParams: any = {}, body: any = null) {
   const event = {

@@ -6,7 +6,9 @@ export class CreateTransaction {
 
   async execute(userId: string, amount: number, description: string): Promise<Transaction> {
     const transaction = Transaction.create(userId, amount, description);
+
     await this.transactionRepo.save(transaction);
+
     return transaction;
   }
 }
