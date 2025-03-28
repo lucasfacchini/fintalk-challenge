@@ -21,9 +21,9 @@ curl -X POST https://api-gateway-url/transaction \
 ### GET /transaction
 Obtém os registros de transação.
 Parâmetros:
-- userId: filtro por usuário.
-- limit: quantidade de registros a retornar.
-- lastEvaluatedKey: ponteiro do ID do usuário para paginação.
+- **userId**: filtro por usuário.
+- **limit**: quantidade de registros a retornar.
+- **lastEvaluatedKey**: ponteiro do ID do usuário para paginação.
 
 ```
 curl https://api-gateway-url/transaction?userId=1234
@@ -32,16 +32,14 @@ curl https://api-gateway-url/transaction?userId=1234
 ### GET /balance
 Calcula e retorna o saldo de um usuário no mês especificado.
 Parâmetros:
-- userId: filtro por usuário.
-- month: mês no formato YYYY-MM
-- limit: quantidade de registros a retornar.
-- lastEvaluatedKey: ponteiro do ID do usuário para paginação.
+- **userId**: filtro por usuário.
+- **month**: mês no formato YYYY-MM
 
 ```
 curl https://api-gateway-url/balance?userId=1234&month=1990-01
 ```
 
-## Execução e deploy
+## Execução local
 
 O projeto pode ser executado localmente usando a versão DynamoDB local disponibilizado pela AWS, que se encontra no ambiente docker compose.
 
@@ -96,3 +94,11 @@ Obter saldo:
 ```
 node dist/cli.js get balance -q "userId=12345,month=2025-03"
 ```
+
+## Deploy
+O deploy da aplicação pode ser feito rodando o script `deploy.sh` presente na raiz do repositório.
+```
+chmod +x deploy.sh
+./deploy.sh
+```
+O script irá buildar e empacotar a aplicação para publicação na Lambda, e em seguida será executado o provisionamento da estrutura usando Terraform.

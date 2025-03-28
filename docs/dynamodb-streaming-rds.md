@@ -6,7 +6,7 @@ A imagem abaixo ilustra uma sugestão de arquitetura para envio de dados do Dyna
 
 Para isso utiliza-se a funcionalidade de streaming (DynamoDB Streams) que irá invocar uma função Lambda a cada modificação de dados que ocorrer na tabela.
 
-A função Lambda recebe o streaming de notificações (criação, modificação e remoção) e realiza a gravação dos dados no banco de dados RDS.
+A função Lambda recebe o streaming de notificações (criação, modificação e remoção) e realiza a persistencia no banco de dados RDS.
 
 Essa configuração é realizada a partir do DynamoDB Stream, onde é possível definir a função Lambda que receberá os dados e qual a quantidade de registros (batch size).
 

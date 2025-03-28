@@ -48,14 +48,3 @@ program
   });
 
 program.parse(process.argv);
-
-// const event = {
-//     httpMethod: "GET",
-//     path: '/balance',
-//     queryStringParameters: {
-//         userId: "1234",
-//         month: `1990-01`
-//     } as APIGatewayProxyEventQueryStringParameters
-// } as APIGatewayProxyEvent;
-
-// const response = handler(event).then((a) => console.log(a))

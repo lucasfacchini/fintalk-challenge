@@ -118,7 +118,6 @@ describe("Transaction Lambda Handler", () => {
 
     const response = await handler(event);
     expect(response.statusCode).toBe(200);
-    console.log(response.body)
     expect(JSON.parse(response.body)).toEqual({"balance": 111.1});
   })
 
