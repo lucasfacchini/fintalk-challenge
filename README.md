@@ -59,7 +59,7 @@ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 export AWS_REGION=us-east-1
 ```
 
-2. Criar a tabela manualmente no DynamoDB local:
+4. Criar a tabela manualmente no DynamoDB local:
 ```
 aws dynamodb create-table \
     --table-name Transactions \
@@ -80,18 +80,18 @@ aws dynamodb create-table \
     ]"
 ```
 
-4. Buildar o projeto:
+5. Buildar o projeto:
 ```
 npx npm install
 npx tsc
 ```
 
-5. Setar variável para apontamento do DynamoDB para o local:
+6. Setar variável para apontamento do DynamoDB para o local:
 ```
 export DYNAMODB_ENDPOINT=http://localhost:8000
 ```
 
-5. Usar a interface CLI para testar requisições.
+7. Usar a interface CLI para testar requisições.
 
 Criar transação:
 ```
