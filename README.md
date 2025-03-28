@@ -50,7 +50,16 @@ O projeto pode ser executado localmente usando a versão DynamoDB local disponib
 docker compose up -d
 ```
 
-2. Criar a tabela manualmente no DynamoDB local (necessário AWS CLI instalado):
+2. Instalar AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+3. Definir credenciais fictícias:
+```
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_REGION=us-east-1
+```
+
+2. Criar a tabela manualmente no DynamoDB local:
 ```
 aws dynamodb create-table \
     --table-name Transactions \
@@ -58,6 +67,7 @@ aws dynamodb create-table \
     --attribute-definitions AttributeName=id,AttributeType=S AttributeName=userId,AttributeType=S AttributeName=createdAt,AttributeType=S \
     --key-schema AttributeName=id,KeyType=HASH \
     --endpoint-url http://localhost:8000 \
+    --region us-east-1 \
     --global-secondary-indexes "[
         {
             \"IndexName\": \"UserIdIndex\",
@@ -72,7 +82,8 @@ aws dynamodb create-table \
 
 4. Buildar o projeto:
 ```
-tsc
+npx npm install
+npx tsc
 ```
 
 5. Setar variável para apontamento do DynamoDB para o local:
